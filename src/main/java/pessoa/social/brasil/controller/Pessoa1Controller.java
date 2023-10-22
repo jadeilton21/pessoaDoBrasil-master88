@@ -38,4 +38,16 @@ public class Pessoa1Controller {
 
 
     }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtulizarPessoa dados){
+
+
+    }
+
+
+
+
+
 }
