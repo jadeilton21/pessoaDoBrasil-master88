@@ -55,6 +55,11 @@ public class Pessoa1Controller {
         pessoa.excluir();
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id){
+        var pessoa = respository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoPessoa(pessoa));
+    }
 
 
 }
