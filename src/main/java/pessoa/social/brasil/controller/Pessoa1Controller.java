@@ -42,8 +42,10 @@ public class Pessoa1Controller {
     @PutMapping
     @Transactional
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtulizarPessoa dados){
+            var pessoa = respository.getReferenceById(dados.id());
+            pessoa.atualizarInformacoes(dados);
 
-
+            return ResponseEntity.ok(new DadosDetalhamentoPessoa(pessoa));
     }
 
 
