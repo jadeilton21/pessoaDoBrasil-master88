@@ -52,4 +52,8 @@ public class Pessoa {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
     }
+
+    public void excluir() {
+        this.ativo = false;
+    }
 }

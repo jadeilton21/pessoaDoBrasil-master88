@@ -47,6 +47,14 @@ public class Pessoa1Controller {
 
             return ResponseEntity.ok(new DadosDetalhamentoPessoa(pessoa));
     }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity excluir(@PathVariable Long id){
+
+        var pessoa = respository.getReferenceById(id);
+        pessoa.excluir();
+        return ResponseEntity.noContent().build();
+    }
 
 
 
