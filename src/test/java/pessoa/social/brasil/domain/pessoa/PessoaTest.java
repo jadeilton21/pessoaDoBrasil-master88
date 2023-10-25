@@ -28,7 +28,7 @@ class PessoaTest {
     void atualizarInformacoes_cenario1() throws Exception {
 
         var response = mockMvc
-                .perform(post("/pessoas"))
+                .perform(post("/pessoa"))
                 .andReturn().getResponse();
 
         assertThat(response.getStatus())
