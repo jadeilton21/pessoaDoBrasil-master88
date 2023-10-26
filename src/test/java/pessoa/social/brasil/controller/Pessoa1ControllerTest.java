@@ -37,4 +37,22 @@ class Pessoa1ControllerTest {
         assertThat(response.getStatus())
                 .isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    @DisplayName("Deve Devolver Código http 400 quando informações estiverem invalidas")
+    @WithMockUser
+    void listar() throws Exception {
+
+        var response = mockMvc
+                .perform(post("/pessoa"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+
+
+    }
+
+
 }
