@@ -55,4 +55,52 @@ class Pessoa1ControllerTest {
     }
 
 
+    @Test
+    @DisplayName("Deve Devolver Código http 400 quando informações estiverem invalidas")
+    @WithMockUser
+    void atualizar() throws Exception {
+
+
+        var response = mockMvc
+                .perform(post("/pessoa"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+
+    }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 400 quando Informações Estiverem Invalidas ")
+    @WithMockUser
+    void excluir()throws Exception {
+
+        var response = mockMvc
+                .perform(post("/pessoa"))
+                .andReturn().getResponse();
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+
+
+
+
+
+
+    }
+
+    @Test
+    @DisplayName("Deve Devolver Código Http 400 quando Informações estiverem Invalidas")
+    @WithMockUser
+    void detalhar()throws Exception {
+
+        var response = mockMvc
+                .perform(post("/pessoa"))
+                .andReturn().getResponse();
+
+
+        assertThat(response.getStatus())
+                .isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
 }
